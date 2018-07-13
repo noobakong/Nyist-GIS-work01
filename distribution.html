@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 标签页（Tab）插件</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/chosen-js/chosen.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/chosen-js/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .myselected {
+            display: none !important;
+        }
+
+        .tab-content h3 {
+            text-align: center
+        }
+
+        .nav-tabs {
+            text-align: center;
+            padding-left: 45%
+        }
+
+        .wenkemodel-box {
+            position: relative;
+            margin-left: 20%;
+        }
+
+        .model-box {
+            position: relative;
+            width: 80%;
+            margin:0 10%;
+            margin-top: 10px;
+            margin-bottom: 7px;
+        }
+
+        .mybutton{
+            position: relative;
+            left:60%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <div class="navbar">
+        <a id="index" class="navbar-brand" href="index.html">
+            <img src="images/banner.png" alt="">
+        </a>
+        <div class="navbar-nav">
+            <a href="#">
+                <li>退出登录
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </li>
+            </a>
+            <a href="#">
+                <li>消息通知
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </li>
+            </a>
+            <a href="#" data-toggle="dropdown">
+                <li class="dropdown">
+                    <span>教导主任</span>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">哈哈哈</a>
+                        </li>
+                        <li>
+                            <a href="#">嘿嘿嘿</a>
+                        </li>
+                        <li>
+                            <a href="#">羞羞羞</a>
+                        </li>
+                        <li>
+                            <a href="#">呀呀呀</a>
+                        </li>
+                    </ul>
+                </li>
+            </a>
+        </div>
+    </div>
+    <!-- 头部导航 结束-->
+    
+    
+    <!--左侧导航条-->
+    <div class="sidebar-menu col-md-2">
+        <a href="userinfo.html" class="single-menu">个人信息</a>
+        <a href="#userMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-user-md icon-large"></i> 账号管理</a>
+        <ul id="userMeun" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="account-jys.html">
+                    <i class="icon-user"></i> 教研室账号管理</a>
+            </li>
+            <li>
+                <a href="account-xy.html">
+                    <i class="icon-edit"></i> 系院账号管理</a>
+            </li>
+            <li>
+                <a href="account-shr.html">
+                    <i class="icon-trash"></i> 审核人账号管理</a>
+            </li>
+    
+        </ul>
+        <a href="distribution.html" class="single-menu">审核人分配</a>
+        <a href="#articleMenu" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-book icon-large"></i> 一级菜单</a>
+        <ul id="articleMenu" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="">
+                    <i class="icon-pencil"></i> 二级菜单</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 二级菜单</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 左侧导航条结束 -->
+
+    <div class="main-content">
+        <div class="filter-bar">
+            <span>
+                <a href="">审核人分配</a>
+            </span>
+            
+        </div>
+    
+        <div class="main">
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#wenke" data-toggle="tab">
+                        文科审核组
+                    </a>
+                </li>
+                <li>
+                    <a href="#like" data-toggle="tab">理科审核组</a>
+                </li>
+            
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="wenke">
+                    <div class="wenkemodel-box col-md-7">
+                        <h3>文科审核组人员分配</h3>
+                        <div class="col-md-7 model-box">
+                            <label class="control-label">制度建设:</label>
+                            <select id="model01" class="model" title="" data-placeholder="请点击分配审核人（框内可搜索）" multiple>
+                                <option class="person1">person1</option>
+                                <option class="person2">person2</option>
+                                <option class="person3">person3</option>
+                                <option class="person4">person4</option>
+                                <option class="person5">person5</option>
+                                <option class="person6">person6</option>
+                                <option class="person7">person7</option>
+                                <option class="person8">person8</option>
+                            </select>
+                        </div>
+            
+                        <div class="col-md-7 model-box">
+                            <label>模块2:</label>
+                            <select id="model02" class="model" title="" data-placeholder="请点击分配审核人（框内可搜索）" multiple>
+                                <option class="person1">person1</option>
+                                <option class="person2">person2</option>
+                                <option class="person3">person3</option>
+                                <option class="person4">person4</option>
+                                <option class="person5">person5</option>
+                                <option class="person6">person6</option>
+                                <option class="person7">person7</option>
+                                <option class="person8">person8</option>
+                            </select>
+                        </div>
+            
+                        <div class="col-md-7 model-box">
+                            <label>模块3:</label>
+                            <select id="model03" class="model" title="" data-placeholder="请点击分配审核人（框内可搜索）" multiple>
+                                <option class="person1">person1</option>
+                                <option class="person2">person2</option>
+                                <option class="person3">person3</option>
+                                <option class="person4">person4</option>
+                                <option class="person5">person5</option>
+                                <option class="person6">person6</option>
+                                <option class="person7">person7</option>
+                                <option class="person8">person8</option>
+                            </select>
+                        </div>
+            
+                        <div class="col-md-7 model-box">
+                            <label>模块4:</label>
+                            <select id="model04" class="model" title="" data-placeholder="请点击分配审核人（框内可搜索）" multiple>
+                                <option class="person1">person1</option>
+                                <option class="person2">person2</option>
+                                <option class="person3">person3</option>
+                                <option class="person4">person4</option>
+                                <option class="person5">person5</option>
+                                <option class="person6">person6</option>
+                                <option class="person7">person7</option>
+                                <option class="person8">person8</option>
+                            </select>
+                        </div>
+            
+                        <div class="col-md-7 model-box">
+                            <label>模块5:</label>
+                            <select id="model05" class="model" title="" data-placeholder="请点击分配审核人（框内可搜索）" multiple>
+                                <option class="person1">person1</option>
+                                <option class="person2">person2</option>
+                                <option class="person3">person3</option>
+                                <option class="person4">person4</option>
+                                <option class="person5">person5</option>
+                                <option class="person6">person6</option>
+                                <option class="person7">person7</option>
+                                <option class="person8">person8</option>
+                            </select>
+                        </div>
+            
+                        <div class="col-md-7 model-box">
+                            <label>模块6:</label>
+                            <select id="model06" class="model" title="" data-placeholder="请点击分配审核人（框内可搜索）" multiple>
+                                <option class="person1">person1</option>
+                                <option class="person2">person2</option>
+                                <option class="person3">person3</option>
+                                <option class="person4">person4</option>
+                                <option class="person5">person5</option>
+                                <option class="person6">person6</option>
+                                <option class="person7">person7</option>
+                                <option class="person8">person8</option>
+                            </select>
+                        </div>
+            
+                        <span class="mybutton">
+                            <button class="btn btn-primary">保存</button>
+                            <button class="btn btn-primary">修改</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="like">
+                    <h3>理科审核组人员分配</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/distribution.js"></script>
+
+</html>

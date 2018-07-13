@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>南工标准教研室管理系统</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <div class="navbar">
+        <a id="index" class="navbar-brand" href="index.html">
+            <img src="images/banner.png" alt="">
+        </a>
+        <div class="navbar-nav">
+            <a href="#">
+                <li>退出登录
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </li>
+            </a>
+            <a href="#">
+                <li>消息通知
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </li>
+            </a>
+            <a href="#" data-toggle="dropdown">
+                <li class="dropdown">
+                    <span>教导主任</span>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">哈哈哈</a>
+                        </li>
+                        <li>
+                            <a href="#">嘿嘿嘿</a>
+                        </li>
+                        <li>
+                            <a href="#">羞羞羞</a>
+                        </li>
+                        <li>
+                            <a href="#">呀呀呀</a>
+                        </li>
+                    </ul>
+                </li>
+            </a>
+        </div>
+    </div>
+    <!-- 头部导航 结束-->
+
+
+    <!--左侧导航条-->
+    <div class="sidebar-menu col-md-2">
+        <a href="userinfo.html" class="single-menu">个人信息</a>
+        <a href="#userMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-user-md icon-large"></i> 账号管理</a>
+        <ul id="userMeun" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="account-jys.html">
+                    <i class="icon-user"></i> 教研室账号管理</a>
+            </li>
+            <li>
+                <a href="account-xy.html">
+                    <i class="icon-edit"></i> 系院账号管理</a>
+            </li>
+            <li>
+                <a href="account-shr.html">
+                    <i class="icon-trash"></i> 审核人账号管理</a>
+            </li>
+
+        </ul>
+        <a href="distribution.html" class="single-menu">审核人分配</a>
+        <a href="#articleMenu" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-book icon-large"></i> 一级菜单</a>
+        <ul id="articleMenu" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="">
+                    <i class="icon-pencil"></i> 二级菜单</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 二级菜单</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 左侧导航条结束 -->
+    <div class="main-content">
+        <div class="filter-bar">
+            <span>
+                <a href="">个人信息</a>
+            </span>
+        </div>
+
+        <div class="main">
+            <div class="form-group col-xs-4">
+                <div class="input-group">
+                    <label class="input-group-addon" for="username">账号：</label>
+                    <input type="text" class="form-control" id="username" placeholder="jiaoyanshizhuren" disabled>
+                </div>
+                <div class="input-group">
+                    <label class="input-group-addon" for="yourId">所属身份：</label>
+                    <input type="text" class="form-control" id="yourId" placeholder="教研室主任" disabled>
+                </div>
+                <div class="input-group">
+                    <label class="input-group-addon" for="password">账号密码：</label>
+                    <input type="password" class="form-control" id="password" placeholder="123456" disabled>
+                </div>
+                <div class="mybtn">
+                    <button class="btn btn-primary" id="editbtn">修改密码</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main显示主区 -->
+</body>
+<script src="js/base.js"></script>
+<script>
+    
+</script>
+</html>
