@@ -109,7 +109,7 @@
                             <th>审核人名称</th>
                             <th>审核人账号</th>
                             <th>密码(初始密码:123456)</th>
-                            <th>负责审核的模块</th>
+                            <th>所属文理科</th>
                             <th>操作</th>
                         </tr>
                     </thead>
@@ -125,7 +125,8 @@
                                 <button class="btn btn-primary" style="width: 100%;">重置密码</button>
                             </td>
                             <td>
-                                <input type="text" class="form-control" placeholder="制度建设" disabled>
+                            <input type="radio" name="wenOrLi" id="wen">文科
+                            <input type="radio" name="wenOrLi" id="li">理科
                             </td>
                             <td>
                                 <button class="btn btn-primary">修改</button>
@@ -161,7 +162,10 @@
         htmladd += '<td><input type="text" class="form-control"></td>';
         htmladd += '<td><input type="text" class="form-control"></td>';
         htmladd += '<td><button class="btn btn-primary" style="width: 100%;">重置密码</button>';
-        htmladd += '<td><input type="text" class="form-control"></td>';
+        htmladd += `<td>
+                            <input type="radio" name="wenOrLi" id="wen">文科
+                            <input type="radio" name="wenOrLi" id="li">理科
+                            </td>`;
         htmladd += '<td><button class="btn btn-primary">修改</button><button class="myremove btn btn-danger">删除</button></td>';
         htmladd += ' </tr>';
         $("#mytable").append(htmladd);

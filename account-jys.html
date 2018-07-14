@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/chosen-js/chosen.jquery.min.js"></script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/account-xy.css">
+    <link rel="stylesheet" href="node_modules/chosen-js/chosen.min.css">
 </head>
 
 <body>
@@ -125,7 +127,16 @@
                                 <button class="btn btn-primary" style="width: 100%;">重置密码</button>
                             </td>
                             <td>
-                                <input type="text" class="form-control" placeholder="软件学院" disabled>
+                                <select class="xyselect" title="" data-placeholder="选择教研室所属院系" >
+                                    <option id="rjxy">软件学院</option>
+                                    <option id="wfxy">文法学院</option>
+                                    <option id="jkxy">计科学院</option>
+                                    <option id="xy4">系院4</option>
+                                    <option id="xy5">系院5</option>
+                                    <option id="xy6">系院6</option>
+                                    <option id="xy7">系院7</option>
+                                    <option id="xy8">系院8</option>
+                                </select>
                             </td>
                             <td>
                                 <button class="btn btn-primary">修改</button>
@@ -161,11 +172,31 @@
         htmladd += '<td><input type="text" class="form-control"></td>';
         htmladd += '<td><input type="text" class="form-control"></td>';
         htmladd += '<td><button class="btn btn-primary" style="width: 100%;">重置密码</button>';
-        htmladd += '<td><input type="text" class="form-control"></td>';
+        htmladd += `<td>
+                                <select class="xyselect" title="" data-placeholder="选择教研室所属院系" >
+                                    <option id="rjxy">软件学院</option>
+                                    <option id="wfxy">文法学院</option>
+                                    <option id="jkxy">计科学院</option>
+                                    <option id="xy4">系院4</option>
+                                    <option id="xy5">系院5</option>
+                                    <option id="xy6">系院6</option>
+                                    <option id="xy7">系院7</option>
+                                    <option id="xy8">系院8</option>
+                                </select>
+                            </td>`;
         htmladd += '<td><button class="btn btn-primary">修改</button><button class="myremove btn btn-danger">删除</button></td>';
         htmladd += ' </tr>';
         $("#mytable").append(htmladd);
         x++;
+        $('.xyselect').chosen({
+            width: '100%', //设置select宽度
+        })
+        $(".xyselect").trigger("chosen:updated");
     })
+
+
+    $('.xyselect').chosen({
+            width: '100%', //设置select宽度
+        });
 </script>
 </html>
