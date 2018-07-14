@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>系院账号管理</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-table/dist/bootstrap-table.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="node_modules/bootstrap-table/dist/bootstrap-table-zh-CN.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <div class="navbar">
+        <a id="index" class="navbar-brand" href="index.html">
+            <img src="images/loginui.png" alt="">
+        </a>
+        <div class="navbar-nav">
+            <a href="#">
+                <li>退出登录
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </li>
+            </a>
+            <a href="#">
+                <li>消息通知
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </li>
+            </a>
+            <a href="#" data-toggle="dropdown">
+                <li class="dropdown">
+                    <span>教导主任</span>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">哈哈哈</a>
+                        </li>
+                        <li>
+                            <a href="#">嘿嘿嘿</a>
+                        </li>
+                        <li>
+                            <a href="#">羞羞羞</a>
+                        </li>
+                        <li>
+                            <a href="#">呀呀呀</a>
+                        </li>
+                    </ul>
+                </li>
+            </a>
+        </div>
+    </div>
+    <!-- 头部导航 结束-->
+
+
+    <!--左侧导航条-->
+    <div class="sidebar-menu col-md-2">
+        <a href="userinfo.html" class="single-menu">个人信息</a>
+        <a href="#userMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-user-md icon-large"></i> 账号管理</a>
+        <ul id="userMeun" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="account-jys.html">
+                    <i class="icon-user"></i> 教研室账号管理</a>
+            </li>
+            <li>
+                <a href="account-xy.html">
+                    <i class="icon-edit"></i> 系院账号管理</a>
+            </li>
+            <li>
+                <a href="account-shr.html">
+                    <i class="icon-trash"></i> 审核人账号管理</a>
+            </li>
+
+        </ul>
+        <a href="distribution.html" class="single-menu">审核人分配</a>
+        <a href="jysck.html" class="single-menu">教研室查看</a>
+        <a href="score.html" class="single-menu">教研室排行榜</a>
+        <a href="#articleMenu" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-book icon-large"></i> 一级菜单</a>
+        <ul id="articleMenu" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="">
+                    <i class="icon-pencil"></i> 二级菜单</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 二级菜单</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 左侧导航条结束 -->
+    <div class="main-content">
+        <!-- 头部链接位置导航条 -->
+        <div class="filter-bar">
+            <span>
+                <a href="">教研室查看</a>
+            </span>
+        </div>
+
+        <!-- 主显示区 -->
+        <div class="main">
+            <table id="table-jysck"></table>
+
+            <!-- 模态框 -->
+            <div class="modal fade" id="rjxy" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title">
+                                点击查看详情查看教研室详情
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <table id="yoyoyo"></table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="submit-room btn btn-primary" data-dismiss="modal">
+                                确认提交
+                            </button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal -->
+            </div>
+        </div>
+        <!-- main显示主区 -->
+</body>
+<script src="js/base.js"></script>
+<script>
+    window.operateEvents = {
+        'click .toreviewevent': function (e, value, row, index) {
+            $("#" + row.class).modal('show');
+            console.log(row.class)
+
+        },
+        'click .gotolinkevent': function (e, value, row, index) {
+            $("#" + row.class).modal('show');
+            alert(row.id)
+
+        }
+    }
+    $('#table-jysck').bootstrapTable({
+        cache: false,   //缓存
+        pagination: true,   //分页
+        pageSize: 5, //默认一页几条
+        pageList: [5, 10], //备选显示条数
+        search: true,  //开启查找
+        showRefresh: true,
+        striped: true,
+        uniqueID: "xueyuanName",
+        columns: [{
+            field: 'xueyuanName',
+            title: '学院名称'
+        }, {
+            field: 'numMax',
+            title: '教研室总数',
+        }, {
+            field: 'numUp',
+            title: '教研室上传数',
+            sortable: true,
+            sortOrder: "asc",
+        }, {
+            field: 'mydo',
+            title: '操作',
+            width: '15%',
+            formatter: toreview,
+            events: operateEvents,
+        }
+        ],
+        data: [{
+            class: "rjxy",
+            xueyuanName: "软件学院",
+            numMax: 6,
+            numUp: 4,
+        }, {
+            class: "wfxy",
+            xueyuanName: "文法学院",
+            numMax: 6,
+            numUp: 2,
+        }, {
+            class: "yyxy",
+            xueyuanName: "音乐学院",
+            numMax: 6,
+            numUp: 4,
+        },
+        {
+            class: "jkxy",
+            xueyuanName: "计科学院",
+            numMax: 6,
+            numUp: 4,
+        },
+        {
+            class: "tmxy",
+            xueyuanName: "土木学院",
+            numMax: 6,
+            numUp: 4,
+        }, {
+            class: "jzxy",
+            xueyuanName: "建筑学院",
+            numMax: 6,
+            numUp: 4,
+        }],
+
+    });
+    function toreview(value, row, index) {
+        return [
+            '<button class="btn btn-default toreviewevent">教研室列表</button>'
+        ].join("")
+    }
+    function gotolink(value, row, index) {
+        return [
+            '<button class="btn btn-default gotolinkevent">查看教研室详情</button>'
+        ].join("")
+    }
+
+    //查看教研室模态框
+    $('#yoyoyo').bootstrapTable({
+        cache: false,   //缓存
+        // pagination: true,   //分页
+        // // sortable: true,
+        // // sortOrder: "asc",
+        // pageSize: 5, //默认一页几条
+        // pageList: [5, 10], //备选显示条数
+        search: true,  //开启查找
+        showRefresh: true,
+        striped: true,
+        // detailView: true,
+        uniqueID: "jysName",
+        columns: [{
+            field: 'jysName',
+            title: '教研室名称'
+        }, {
+            field: 'isForm',
+            title: '所属院系'
+        }, {
+            field: 'isUp',
+            title: '是否上传文件'
+        }, {
+            field: 'mydo',
+            title: '操作',
+            formatter: gotolink,
+            events: operateEvents,
+        }
+        ],
+        data: [{
+            id: 'rj-jys-01',
+            jysName: "教研室01",
+            isForm: "软件学院",
+            isUp: "已上传",
+        }, {
+            id: 'rj-jys-02',
+            jysName: "教研室02",
+            isForm: "软件学院",
+            isUp: "已上传",
+        }, {
+            id: 'rj-jys-03',
+            jysName: "教研室03",
+            isForm: "软件学院",
+            isUp: "已上传",
+        },
+        {
+            id: 'rj-jys-04',
+            jysName: "教研室04",
+            isForm: "软件学院",
+            isUp: "已上传",
+        },
+        {
+            id: 'rj-jys-05',
+            jysName: "教研室05",
+            isForm: "软件学院",
+            isUp: "已上传",
+        }, {
+            id: 'rj-jys-06',
+            jysName: "教研室06",
+            isForm: "软件学院",
+            isUp: "未上传",
+        }],
+
+    });
+
+</script>
+
+</html>
