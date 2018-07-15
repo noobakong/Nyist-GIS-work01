@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>教研室详情查看</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/chosen-js/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        .main .xiala .filebox{
+            position: relative;
+            margin-top:35px;
+            height: 700px;
+            overflow:auto;
+            overflow-x:hidden;
+        }
+        .main .xiala .filebox .file-box-son{
+            position: relative;
+            display: inline-block;
+            width: 66%;
+        }
+        .main .xiala .filebox .filedownbtn{
+            position: absolute;
+            right: -70px;
+            top:0;
+        }
+        .main .tab-content .infor{
+            position: relative;
+            margin-left: 50px;
+            margin-top: 30px;
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <div class="navbar">
+        <a id="index" class="navbar-brand" href="index.html">
+            <img src="images/loginui.png" alt="">
+        </a>
+        <div class="navbar-nav">
+            <a href="#">
+                <li>退出登录
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </li>
+            </a>
+            <a href="#">
+                <li>消息通知
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </li>
+            </a>
+            <a href="#" data-toggle="dropdown">
+                <li class="dropdown">
+                    <span>教导主任</span>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">哈哈哈</a>
+                        </li>
+                        <li>
+                            <a href="#">嘿嘿嘿</a>
+                        </li>
+                        <li>
+                            <a href="#">羞羞羞</a>
+                        </li>
+                        <li>
+                            <a href="#">呀呀呀</a>
+                        </li>
+                    </ul>
+                </li>
+            </a>
+        </div>
+    </div>
+    <!-- 头部导航 结束-->
+
+
+    <!--左侧导航条-->
+    <div class="sidebar-menu col-md-2">
+        <a href="userinfo.html" class="single-menu">个人信息</a>
+        <a href="#userMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-user-md icon-large"></i> 账号管理</a>
+        <ul id="userMeun" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="account-jys.html">
+                    <i class="icon-user"></i> 教研室账号管理</a>
+            </li>
+            <li>
+                <a href="account-xy.html">
+                    <i class="icon-edit"></i> 系院账号管理</a>
+            </li>
+            <li>
+                <a href="account-shr.html">
+                    <i class="icon-trash"></i> 审核人账号管理</a>
+            </li>
+
+        </ul>
+        <a href="distribution.html" class="single-menu">审核人分配</a>
+        <a href="jysck.html" class="single-menu">教研室查看</a>
+        <a href="score.html" class="single-menu">教研室排行榜</a>
+        <a href="#articleMenu" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-book icon-large"></i> 一级菜单</a>
+        <ul id="articleMenu" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="">
+                    <i class="icon-pencil"></i> 二级菜单</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 二级菜单</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 左侧导航条结束 -->
+    <div class="main-content">
+        <!-- 头部链接位置导航条 -->
+        <div class="filter-bar">
+            <span>
+                <a href="">教研室详情查看</a>
+            </span>
+        </div>
+
+        <!-- 主显示区 -->
+        <div class="main">
+            <div class="xiala">
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#class1" data-toggle="tab">
+                            制度建设
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#class2" data-toggle="tab">教学效果</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="class1">
+                        <div class="form-group col-xs-4 filebox">
+                            <div class="file-box-son">
+                                <div class="input-group">
+                                    <label class="input-group-addon" for="No1file">1：</label>
+                                    <input type="text" class="form-control" id="No1file" placeholder="文件名01" disabled>
+                                </div>
+                                <button class="btn btn-primary filedownbtn">下载</button>
+                            </div>
+                            <div class="file-box-son">
+                                <div class="input-group">
+                                    <label class="input-group-addon" for="No1file">2：</label>
+                                    <input type="text" class="form-control" id="No2file" placeholder="文件名02" disabled>
+                                </div>
+                                <button class="btn btn-primary filedownbtn">下载</button>
+                            </div>
+                            <div class="file-box-son">
+                                <div class="input-group">
+                                    <label class="input-group-addon" for="No1file">3：</label>
+                                    <input type="text" class="form-control" id="No3file" placeholder="文件名03" disabled>
+                                </div>
+                                <button class="btn btn-primary filedownbtn">下载</button>
+                            </div>
+                        </div>
+
+                        <div class="infor col-xs-6">
+                            <h3>制度建设模块细则说明：</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis enim assumenda rerum aspernatur asperiores, maiores in adipisci necessitatibus quae, nesciunt, fugit quod voluptatem error minima? Recusandae, illo. Ullam, ab perspiciatis.</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="class2">
+                        2
+                    </div>
+
+                    <div class="tab-pane fade" id="class3">
+                        3
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- main显示主区 -->
+</body>
+<script src="js/base.js"></script>
+<script>
+    // //触发隐藏的file表单
+    // function makeThisfile() {
+    //     $('#thisfile').click();
+    // }
+
+    // //file表单选中文件时,让file表单的val展示到showname这个展示框
+    // $('#thisfile').change(function () {
+    //     $('#showname').val($(this).val())
+    // })
+</script>
+
+</html>
