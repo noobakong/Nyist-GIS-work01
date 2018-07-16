@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>系院账号管理</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        .main .xiala .nav{
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <div class="navbar">
+        <a id="index" class="navbar-brand" href="index.html">
+            <img src="images/loginui.png" alt="">
+        </a>
+        <div class="navbar-nav">
+            <a href="#">
+                <li>退出登录
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </li>
+            </a>
+            <a href="#">
+                <li>消息通知
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </li>
+            </a>
+            <a href="#" data-toggle="dropdown">
+                <li class="dropdown">
+                    <span>教导主任</span>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">哈哈哈</a>
+                        </li>
+                        <li>
+                            <a href="#">嘿嘿嘿</a>
+                        </li>
+                        <li>
+                            <a href="#">羞羞羞</a>
+                        </li>
+                        <li>
+                            <a href="#">呀呀呀</a>
+                        </li>
+                    </ul>
+                </li>
+            </a>
+        </div>
+    </div>
+    <!-- 头部导航 结束-->
+
+
+    <!--左侧导航条-->
+    <div class="sidebar-menu col-md-2">
+        <a href="userinfo.html" class="single-menu">个人信息</a>
+        <a href="#userMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-user-md icon-large"></i> 账号管理</a>
+        <ul id="userMeun" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="account-jys.html">
+                    <i class="icon-user"></i> 教研室账号管理</a>
+            </li>
+            <li>
+                <a href="account-xy.html">
+                    <i class="icon-edit"></i> 系院账号管理</a>
+            </li>
+            <li>
+                <a href="account-shr.html">
+                    <i class="icon-trash"></i> 审核人账号管理</a>
+            </li>
+    
+        </ul>
+        <a href="distribution.html" class="single-menu">审核人分配</a>         <a href="jysck.html" class="single-menu">教研室查看</a>         <a href="score.html" class="single-menu">教研室排行榜</a>
+        <a href="#articleMenu" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-book icon-large"></i> 一级菜单</a>
+        <ul id="articleMenu" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="">
+                    <i class="icon-pencil"></i> 二级菜单</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 二级菜单</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 左侧导航条结束 -->
+    <div class="main-content">
+        <!-- 头部链接位置导航条 -->
+        <div class="filter-bar">
+            <span>
+                <a href="">教研室审核记录</a>
+            </span>
+        </div>
+
+        <!-- 主显示区 -->
+        <div class="main">
+            <div class="xiala">
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#class1" data-toggle="tab">
+                            制度建设
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#class2" data-toggle="tab">教学效果</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+                    <li>
+                        <a href="#class3" data-toggle="tab">专业建设</a>
+                    </li>
+            
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="class1">
+                        <div class="content-form">
+                            <form class="userinfoform form-horizontal">
+                                <div class="form-group">
+                                    <label for="username" class="col-sm-2 control-label">审核人:</label>
+                                    <div class="col-md-4">
+                                        <input type="username" class="form-control" id="username" disabled placeholder="xxx">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shenhe-block" class="col-sm-2 control-label">审核模块:</label>
+                                    <div class="col-md-4">
+                                        <input type="username" class="form-control" id="shenhe-block" disabled placeholder="制度建设">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="score" class="col-sm-2 control-label">分数:</label>
+                                    <div class="col-md-4">
+                                        <input onchange="isfitnum(this);" type="number" class="form-control" id="score" disabled placeholder="13">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="info-message" class="col-sm-2 control-label">点评:</label>
+                                    <div class="col-md-4">
+                                        <textarea style="resize:none;" type="text" rows="8" class="form-control" id="info-message" disabled placeholder="写点你的看法或意见吧~">点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧</textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="class2">
+                        <div class="content-form">
+                            <form class="userinfoform form-horizontal">
+                                <div class="form-group">
+                                    <label for="username" class="col-sm-2 control-label">审核人:</label>
+                                    <div class="col-md-4">
+                                        <input type="username" class="form-control" id="username" disabled placeholder="xxx">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shenhe-block" class="col-sm-2 control-label">审核模块:</label>
+                                    <div class="col-md-4">
+                                        <input type="username" class="form-control" id="shenhe-block" disabled placeholder="制度建设">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="score" class="col-sm-2 control-label">分数:</label>
+                                    <div class="col-md-4">
+                                        <input onchange="isfitnum(this);" type="number" class="form-control" id="score" disabled placeholder="13">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="info-message" class="col-sm-2 control-label">点评:</label>
+                                    <div class="col-md-4">
+                                        <textarea style="resize:none;" type="text" rows="8" class="form-control" id="info-message" disabled placeholder="写点你的看法或意见吧~">点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧</textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            
+                    <div class="tab-pane fade" id="class3">
+                        <div class="content-form">
+                            <form class="userinfoform form-horizontal">
+                                <div class="form-group">
+                                    <label for="username" class="col-sm-2 control-label">审核人:</label>
+                                    <div class="col-md-4">
+                                        <input type="username" class="form-control" id="username" disabled placeholder="xxx">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shenhe-block" class="col-sm-2 control-label">审核模块:</label>
+                                    <div class="col-md-4">
+                                        <input type="username" class="form-control" id="shenhe-block" disabled placeholder="制度建设">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="score" class="col-sm-2 control-label">分数:</label>
+                                    <div class="col-md-4">
+                                        <input onchange="isfitnum(this);" type="number" class="form-control" id="score" disabled placeholder="13">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="info-message" class="col-sm-2 control-label">点评:</label>
+                                    <div class="col-md-4">
+                                        <textarea style="resize:none;" type="text" rows="8" class="form-control" id="info-message" disabled placeholder="写点你的看法或意见吧~">点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧</textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main显示主区 -->
+</body>
+<script src="js/base.js"></script>
+<script>
+    
+</script>
+</html>

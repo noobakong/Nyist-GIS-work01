@@ -12,7 +12,7 @@
     <style>
         .main .xiala .filebox{
             position: relative;
-            margin-top:35px;
+            /* margin-top:35px; */
             height: 700px;
             overflow:auto;
             overflow-x:hidden;
@@ -30,9 +30,10 @@
         .main .tab-content .infor{
             position: relative;
             margin-left: 50px;
-            margin-top: 30px;
-            
-
+        }
+        .main .tab-content h3{
+            color:rgb(61, 107, 124);
+            text-align: center;
         }
     </style>
 </head>
@@ -162,6 +163,7 @@
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade in active" id="class1">
                         <div class="form-group col-xs-4 filebox">
+                            <h3>教研室文件下载查看</h3>
                             <div class="file-box-son">
                                 <div class="input-group">
                                     <label class="input-group-addon" for="No1file">1：</label>
@@ -184,8 +186,38 @@
                                 <button class="btn btn-primary filedownbtn">下载</button>
                             </div>
                         </div>
-
-                        <div class="infor col-xs-6">
+                        <div class="shenhe-info col-xs-4">
+                            <h3>该模块审核记录</h3>
+                            <div class="content-form">
+                                <form class="userinfoform form-horizontal">
+                                    <div class="form-group">
+                                        <label for="username" class="col-sm-3 control-label">审核人:</label>
+                                        <div class="col-md-8">
+                                            <input type="username" class="form-control" id="username" disabled placeholder="xxx">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="shenhe-block" class="col-sm-3 control-label">审核模块:</label>
+                                        <div class="col-md-8">
+                                            <input type="username" class="form-control" id="shenhe-block" disabled placeholder="制度建设">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="score" class="col-sm-3 control-label">模块分数:</label>
+                                        <div class="col-md-8">
+                                            <input onchange="isfitnum(this);" type="number" class="form-control" id="score" disabled placeholder="15">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="info-message" class="col-sm-3 control-label">审核人点评:</label>
+                                        <div class="col-md-8">
+                                            <textarea style="resize:none;" type="text" rows="8" class="form-control" id="info-message" disabled placeholder="写点你的看法或意见吧~">点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧点你的看法或意见吧</textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="infor col-xs-3">
                             <h3>制度建设模块细则说明：</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis enim assumenda rerum aspernatur asperiores, maiores in adipisci necessitatibus quae, nesciunt, fugit quod voluptatem error minima? Recusandae, illo. Ullam, ab perspiciatis.</p>
                         </div>

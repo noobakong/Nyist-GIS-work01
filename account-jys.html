@@ -8,6 +8,7 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/chosen-js/chosen.jquery.min.js"></script>
+    <script src="js/paginathing.min.js"></script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/account-xy.css">
     <link rel="stylesheet" href="node_modules/chosen-js/chosen.min.css">
@@ -143,6 +144,8 @@
                                 <button class="myremove btn btn-danger">删除</button>
                             </td>
                         </tr>
+
+                        
                     </tbody>
                 </table>
                 <div class="mybtn">
@@ -192,11 +195,35 @@
             width: '100%', //设置select宽度
         })
         $(".xyselect").trigger("chosen:updated");
+        $('nav.table-content').remove()
+        jQuery(document).ready(function ($) {
+            $('.table tbody').paginathing({
+                perPage: 6,
+                containerClass: 'table-content',
+                insertAfter: '.table',
+                prevText: '上一页',
+                nextText: '下一页',
+                firstText: '最前',
+                lastText: '最后',
+            })
+        });
     })
 
 
     $('.xyselect').chosen({
             width: '100%', //设置select宽度
+        });
+
+    jQuery(document).ready(function ($) {
+            $('.table tbody').paginathing({
+                perPage: 6,
+                containerClass: 'table-content',
+                insertAfter: '.table',
+                prevText: '上一页',
+                nextText: '下一页',
+                firstText: '最前',
+                lastText: '最后',
+            })
         });
 </script>
 </html>
