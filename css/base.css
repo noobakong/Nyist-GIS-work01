@@ -85,7 +85,19 @@ body{
             font-size: 15px;
         }
         /*一级菜单*/
-        .menu-first,.single-menu{
+        .menu-first{
+            height: 45px;
+            line-height: 45px;
+            background-color: rgb(195, 236, 250);
+            border-top: 2px solid rgba(170, 165, 165, 0.219);
+            border-bottom: 2px solid rgba(170, 165, 165, 0.219);
+            padding: 0;
+            font-size: 14px;
+            font-weight: normal;
+            /* text-align: center; */
+            display: block;
+        }
+        .single-menu{
             height: 45px;
             line-height: 45px;
             background-color: lightblue;
@@ -184,6 +196,11 @@ body{
     line-height:60px;
     margin-bottom: 20px;
     
+}
+.filter-bar .select-bar,
+.select-bar{
+    display: inline-block;
+    float: right;
 }
 
 .main .form-group .input-group{

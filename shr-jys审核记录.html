@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>系院账号管理</title>
+    <title>待审核教研室列表</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="node_modules/bootstrap-table/dist/bootstrap-table.min.css">
@@ -52,42 +52,89 @@
             </a>
         </div>
     </div>
+
     <!-- 头部导航 结束-->
 
 
     <!--左侧导航条-->
     <div class="sidebar-menu col-md-2">
-        <a href="userinfo.html" class="single-menu">个人信息</a>
+        <a href="userinfo.html" class="single-menu">通用-个人信息</a>
+        <a href="paihangbang.html" class="single-menu">通用-教研室排行榜</a>
         <a href="#userMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
-            <i class="icon-user-md icon-large"></i> 账号管理</a>
+            <i class="icon-user-md icon-large"></i> zr-账号管理</a>
         <ul id="userMeun" class="nav nav-list collapse menu-second">
             <li>
-                <a href="account-jys.html">
+                <a href="zr-account-jsy.html">
                     <i class="icon-user"></i> 教研室账号管理</a>
             </li>
             <li>
-                <a href="account-xy.html">
+                <a href="zr-account-xy.html">
                     <i class="icon-edit"></i> 系院账号管理</a>
             </li>
             <li>
-                <a href="account-shr.html">
+                <a href="zr-account-shr.html">
                     <i class="icon-trash"></i> 审核人账号管理</a>
             </li>
-
+    
         </ul>
-        <a href="distribution.html" class="single-menu">审核人分配</a>
-        <a href="jysck.html" class="single-menu">教研室查看</a>
-        <a href="score.html" class="single-menu">教研室排行榜</a>
+        <a href="zr-shrdistribution.html" class="single-menu">zr-审核人分配</a>
+        <a href="zr-jys-view.html" class="single-menu">zr-教研室查看</a>
+    
+        <!--教研室列表  -->
         <a href="#articleMenu" class="nav-header menu-first collapsed" data-toggle="collapse">
-            <i class="icon-book icon-large"></i> 一级菜单</a>
+            <i class="icon-book icon-large"></i>jys-教研室上传</a>
         <ul id="articleMenu" class="nav nav-list collapse menu-second">
             <li>
-                <a href="">
-                    <i class="icon-pencil"></i> 二级菜单</a>
+                <a href="jys-upfile.html">
+                    <i class="icon-pencil"></i> 制度建设</a>
             </li>
             <li>
                 <a href="">
-                    <i class="icon-list-alt"></i> 二级菜单</a>
+                    <i class="icon-list-alt"></i> 教学效果</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+        </ul>
+        <a href="jys-shenhehistory.html" class="single-menu">jys-审核记录</a>
+    
+    
+        <!-- 审核人列表 -->
+        <a href="#shrside" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-user-md icon-large"></i> shr-教研室审核</a>
+        <ul id="shrside" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="shr-jys待我审核列表.html">
+                    <i class="icon-user"></i> 待我审核</a>
+            </li>
+            <li>
+                <a href="shr-jys审核记录.html">
+                    <i class="icon-edit"></i> 审核记录</a>
             </li>
         </ul>
     </div>
@@ -156,18 +203,19 @@
         search: true,  //开启查找
         showRefresh: true,
         striped: true,
-        uniqueID: "xueyuanName",
+        uniqueID: "jysName",
         columns: [{
-            field: 'xueyuanName',
-            title: '学院名称'
+            field: 'jysName',
+            title: '教研室名称'
         }, {
-            field: 'numMax',
-            title: '教研室总数',
+            field: 'isFrom',
+            title: '所属院系',
         }, {
-            field: 'numUp',
-            title: '教研室上传数',
-            sortable: true,
-            sortOrder: "asc",
+            field: 'yourModel',
+            title: '审核模块',
+        }, {
+            field: 'score',
+            title: '所打分数',
         }, {
             field: 'mydo',
             title: '操作',
@@ -177,116 +225,53 @@
         }
         ],
         data: [{
-            class: "rjxy",
-            xueyuanName: "软件学院",
-            numMax: 6,
-            numUp: 4,
+            class: "jys01",
+            isFrom: "软件学院",
+            jysName: '教研室01',
+            yourModel: '制度建设',
+            score:13
         }, {
-            class: "wfxy",
-            xueyuanName: "文法学院",
-            numMax: 6,
-            numUp: 2,
+            class: "jsy02",
+            isFrom: "文法学院",
+            jysName: '教研室02',
+            yourModel: '制度建设',
+            score:13
         }, {
-            class: "yyxy",
-            xueyuanName: "音乐学院",
-            numMax: 6,
-            numUp: 4,
+            class: "jys03",
+            isFrom: "音乐学院",
+            jysName: '教研室03',
+            yourModel: '制度建设',
+            score:13
         },
         {
-            class: "jkxy",
-            xueyuanName: "计科学院",
-            numMax: 6,
-            numUp: 4,
+            class: "jys03",
+            isFrom: "计科学院",
+            jysName: '教研室04',
+            yourModel: '制度建设',
+            score:13
         },
         {
-            class: "tmxy",
-            xueyuanName: "土木学院",
-            numMax: 6,
-            numUp: 4,
+            class: "jys03",
+            isFrom: "土木学院",
+            jysName: '教研室05',
+            yourModel: '制度建设',
+            score:13
         }, {
-            class: "jzxy",
-            xueyuanName: "建筑学院",
-            numMax: 6,
-            numUp: 4,
+            class: "jys03",
+            isFrom: "建筑学院",
+            jysName: '教研室06',
+            yourModel: '制度建设',
+            score:13
         }],
 
     });
     function toreview(value, row, index) {
         return [
-            '<button class="btn btn-default toreviewevent">教研室列表</button>'
-        ].join("")
-    }
-    function gotolink(value, row, index) {
-        return [
-            '<button class="btn btn-default gotolinkevent">查看教研室详情</button>'
+            '<a href="shr-jys已审核页面查看修改.html"><button class="btn btn-default toreviewevent">查看或修改</button></a>'
         ].join("")
     }
 
     //查看教研室模态框
-    $('#yoyoyo').bootstrapTable({
-        cache: false,   //缓存
-        // pagination: true,   //分页
-        // // sortable: true,
-        // // sortOrder: "asc",
-        // pageSize: 5, //默认一页几条
-        // pageList: [5, 10], //备选显示条数
-        search: true,  //开启查找
-        showRefresh: true,
-        striped: true,
-        // detailView: true,
-        uniqueID: "jysName",
-        columns: [{
-            field: 'jysName',
-            title: '教研室名称'
-        }, {
-            field: 'isForm',
-            title: '所属院系'
-        }, {
-            field: 'isUp',
-            title: '是否上传文件'
-        }, {
-            field: 'mydo',
-            title: '操作',
-            formatter: gotolink,
-            events: operateEvents,
-        }
-        ],
-        data: [{
-            id: 'rj-jys-01',
-            jysName: "教研室01",
-            isForm: "软件学院",
-            isUp: "已上传",
-        }, {
-            id: 'rj-jys-02',
-            jysName: "教研室02",
-            isForm: "软件学院",
-            isUp: "已上传",
-        }, {
-            id: 'rj-jys-03',
-            jysName: "教研室03",
-            isForm: "软件学院",
-            isUp: "已上传",
-        },
-        {
-            id: 'rj-jys-04',
-            jysName: "教研室04",
-            isForm: "软件学院",
-            isUp: "已上传",
-        },
-        {
-            id: 'rj-jys-05',
-            jysName: "教研室05",
-            isForm: "软件学院",
-            isUp: "已上传",
-        }, {
-            id: 'rj-jys-06',
-            jysName: "教研室06",
-            isForm: "软件学院",
-            isUp: "未上传",
-        }],
-
-    });
-
 </script>
 
 </html>

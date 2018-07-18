@@ -22,15 +22,18 @@
             color: rgb(103, 166, 187);
             text-shadow: 0 8px 9px #c4b59d, 0px -2px 1px #7f8081;
         }
-        #score-heard{
+
+        #score-heard {
             position: relative;
             margin: 0 auto;
             text-align: center;
         }
-        #score-heard>h2{
+
+        #score-heard>h2 {
             display: inline-block;
         }
-        #data-select{
+
+        #data-select {
             display: inline-block;
             margin-left: 20px;
             margin-bottom: 12px;
@@ -82,37 +85,83 @@
 
     <!--左侧导航条-->
     <div class="sidebar-menu col-md-2">
-        <a href="userinfo.html" class="single-menu">个人信息</a>
+        <a href="userinfo.html" class="single-menu">通用-个人信息</a>
+        <a href="paihangbang.html" class="single-menu">通用-教研室排行榜</a>
         <a href="#userMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
-            <i class="icon-user-md icon-large"></i> 账号管理</a>
+            <i class="icon-user-md icon-large"></i> zr-账号管理</a>
         <ul id="userMeun" class="nav nav-list collapse menu-second">
             <li>
-                <a href="account-jys.html">
+                <a href="zr-account-jsy.html">
                     <i class="icon-user"></i> 教研室账号管理</a>
             </li>
             <li>
-                <a href="account-xy.html">
+                <a href="zr-account-xy.html">
                     <i class="icon-edit"></i> 系院账号管理</a>
             </li>
             <li>
-                <a href="account-shr.html">
+                <a href="zr-account-shr.html">
                     <i class="icon-trash"></i> 审核人账号管理</a>
             </li>
-
+    
         </ul>
-        <a href="distribution.html" class="single-menu">审核人分配</a>
-        <a href="jysck.html" class="single-menu">教研室查看</a>
-        <a href="score.html" class="single-menu">教研室排行榜</a>
+        <a href="zr-shrdistribution.html" class="single-menu">zr-审核人分配</a>
+        <a href="zr-jys-view.html" class="single-menu">zr-教研室查看</a>
+    
+        <!--教研室列表  -->
         <a href="#articleMenu" class="nav-header menu-first collapsed" data-toggle="collapse">
-            <i class="icon-book icon-large"></i> 一级菜单</a>
+            <i class="icon-book icon-large"></i>jys-教研室上传</a>
         <ul id="articleMenu" class="nav nav-list collapse menu-second">
             <li>
-                <a href="">
-                    <i class="icon-pencil"></i> 二级菜单</a>
+                <a href="jys-upfile.html">
+                    <i class="icon-pencil"></i> 制度建设</a>
             </li>
             <li>
                 <a href="">
-                    <i class="icon-list-alt"></i> 二级菜单</a>
+                    <i class="icon-list-alt"></i> 教学效果</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+        </ul>
+        <a href="jys-shenhehistory.html" class="single-menu">jys-审核记录</a>
+    
+    
+        <!-- 审核人列表 -->
+        <a href="#shrside" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-user-md icon-large"></i> shr-教研室审核</a>
+        <ul id="shrside" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="shr-jys待我审核列表.html">
+                    <i class="icon-user"></i> 待我审核</a>
+            </li>
+            <li>
+                <a href="shr-jys审核记录.html">
+                    <i class="icon-edit"></i> 审核记录</a>
             </li>
         </ul>
     </div>
@@ -122,28 +171,22 @@
         <div class="main">
             <div id="score-heard">
                 <h2 id="score-ph">排行榜</h3>
-                <div class="btn-group" id="data-select">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">年份
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a href="#">2018</a>
-                        </li>
-                        <li>
-                            <a href="#">2017</a>
-                        </li>
-                        <li>
-                            <a href="#">2016</a>
-                        </li>
-                    </ul>
+                <div class="form-inline select-bar">
+                    <select class="form-control">
+                        <option>2018~2019上半年</option>
+                        <option>2016~2017下半年</option>
+                        <option>2017~2018上半年</option>
+                        <option>2016~2017下半年</option>
+                        <option>2018~2019上半年</option>
+                    </select>
+                    <button type="button" class="btn btn-info">检索</button>
                 </div>
             </div>
-
 
             <table id="scoreTable"></table>
             <!-- main显示主区 -->
         </div>
+        
     </div>
 </body>
 <script src="js/base.js"></script>
@@ -186,7 +229,7 @@
             title: '教研室总得分',
             sortable: true,
             sortOrder: 'desc',
-            width:"20%"
+            width: "20%"
         }, {
             field: 'mydo',
             title: '操作',

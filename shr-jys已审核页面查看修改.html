@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>教研室详情查看</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/chosen-js/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        .main .main-box .filebox{
+            position: relative;
+            /* margin-top:35px; */
+            height: 700px;
+            overflow:auto;
+            overflow-x:hidden;
+            margin-left: 60px;
+        }
+        .main .main-box .filebox .file-box-son{
+            position: relative;
+            display: inline-block;
+            width: 66%;
+        }
+        .main .main-box .filebox .filedownbtn{
+            position: absolute;
+            right: -70px;
+            top:0;
+        }
+        .main .main-box h3{
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(54, 85, 85)
+        }
+        .main .main-box .shenhe-info h3{
+            padding-left: 25%;
+        }
+        .mybtn1{
+            position: absolute;
+            right: 70px;
+        }
+        
+       
+    </style>
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <div class="navbar">
+        <a id="index" class="navbar-brand" href="index.html">
+            <img src="images/loginui.png" alt="">
+        </a>
+        <div class="navbar-nav">
+            <a href="#">
+                <li>退出登录
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </li>
+            </a>
+            <a href="#">
+                <li>消息通知
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </li>
+            </a>
+            <a href="#" data-toggle="dropdown">
+                <li class="dropdown">
+                    <span>教导主任</span>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">哈哈哈</a>
+                        </li>
+                        <li>
+                            <a href="#">嘿嘿嘿</a>
+                        </li>
+                        <li>
+                            <a href="#">羞羞羞</a>
+                        </li>
+                        <li>
+                            <a href="#">呀呀呀</a>
+                        </li>
+                    </ul>
+                </li>
+            </a>
+        </div>
+    </div>
+    <!-- 头部导航 结束-->
+
+
+    <!--左侧导航条-->
+    <div class="sidebar-menu col-md-2">
+        <a href="userinfo.html" class="single-menu">通用-个人信息</a>
+        <a href="paihangbang.html" class="single-menu">通用-教研室排行榜</a>
+        <a href="#userMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-user-md icon-large"></i> zr-账号管理</a>
+        <ul id="userMeun" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="zr-account-jsy.html">
+                    <i class="icon-user"></i> 教研室账号管理</a>
+            </li>
+            <li>
+                <a href="zr-account-xy.html">
+                    <i class="icon-edit"></i> 系院账号管理</a>
+            </li>
+            <li>
+                <a href="zr-account-shr.html">
+                    <i class="icon-trash"></i> 审核人账号管理</a>
+            </li>
+    
+        </ul>
+        <a href="zr-shrdistribution.html" class="single-menu">zr-审核人分配</a>
+        <a href="zr-jys-view.html" class="single-menu">zr-教研室查看</a>
+    
+        <!--教研室列表  -->
+        <a href="#articleMenu" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-book icon-large"></i>jys-教研室上传</a>
+        <ul id="articleMenu" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="jys-upfile.html">
+                    <i class="icon-pencil"></i> 制度建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 教学效果</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+        </ul>
+        <a href="jys-shenhehistory.html" class="single-menu">jys-审核记录</a>
+    
+    
+        <!-- 审核人列表 -->
+        <a href="#shrside" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-user-md icon-large"></i> shr-教研室审核</a>
+        <ul id="shrside" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="shr-jys待我审核列表.html">
+                    <i class="icon-user"></i> 待我审核</a>
+            </li>
+            <li>
+                <a href="shr-jys审核记录.html">
+                    <i class="icon-edit"></i> 审核记录</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 左侧导航条结束 -->
+    <div class="main-content">
+        <!-- 头部链接位置导航条 -->
+        <div class="filter-bar">
+            <span>
+                <a href="">教研室详情查看</a>
+            </span>
+        </div>
+
+        <!-- 主显示区 -->
+        <div class="main">
+            <div class="main-box">
+            
+                <div class="form-group col-xs-4 filebox">
+                    <h3>教研室文件下载查看</h3>
+                    <div class="file-box-son">
+                        <div class="input-group">
+                            <label class="input-group-addon" for="No1file">1：</label>
+                            <input type="text" class="form-control" id="No1file" placeholder="文件名01" disabled>
+                        </div>
+                        <button class="btn btn-primary filedownbtn">下载</button>
+                    </div>
+                    <div class="file-box-son">
+                        <div class="input-group">
+                            <label class="input-group-addon" for="No1file">2：</label>
+                            <input type="text" class="form-control" id="No2file" placeholder="文件名02" disabled>
+                        </div>
+                        <button class="btn btn-primary filedownbtn">下载</button>
+                    </div>
+                    <div class="file-box-son">
+                        <div class="input-group">
+                            <label class="input-group-addon" for="No1file">3：</label>
+                            <input type="text" class="form-control" id="No3file" placeholder="文件名03" disabled>
+                        </div>
+                        <button class="btn btn-primary filedownbtn">下载</button>
+                    </div>
+                </div>
+                <div class="shenhe-info col-xs-5">
+                    <h3>该模块审核记录</h3>
+                    <div class="content-form">
+                        <form class="userinfoform form-horizontal">
+                            <div class="form-group">
+                                <label for="jysname" class="col-sm-3 control-label">教研室名称:</label>
+                                <div class="col-md-8">
+                                    <input type="username" class="form-control" id="jysname" disabled placeholder="教研室01">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="shenhe-block" class="col-sm-3 control-label">审核模块:</label>
+                                <div class="col-md-8">
+                                    <input type="username" class="form-control" id="shenhe-block" disabled placeholder="制度建设">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="score" class="col-sm-3 control-label">模块分数:</label>
+                                <div class="col-md-8 toedit"> 
+                                    <input  type="number" class="form-control" id="score"  disabled placeholder="10">
+                                </div>
+                            </div>
+                            <div class="form-group toedit">
+                                <label for="info-message" class="col-sm-3 control-label">审核人点评:</label>
+                                <div class="col-md-8">
+                                    <textarea  style="resize:none;" type="text" rows="8" class="form-control" id="info-message"  disabled placeholder="好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                            <button id="editbtn" type="button" class="mybtn1 btn btn-default">修改</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- main显示主区 -->
+</body>
+<script>
+        $("#editbtn").click(function (event) {
+            event.preventDefault();
+            if (this.innerHTML === "修改") {
+                console.log(11)
+                $('.toedit>input').attr("disabled", false)
+                $('.toedit').find('textarea').attr("disabled", false)
+                this.innerHTML = "提交修改"
+            }
+            else {
+                $('.toedit>input').attr("disabled", true)
+                $('.toedit').find('textarea').attr("disabled", true)
+                this.innerHTML = "修改"
+            }
+
+        })
+</script>
+
+</html>

@@ -55,35 +55,83 @@
 
     <!--左侧导航条-->
     <div class="sidebar-menu col-md-2">
-        <a href="userinfo.html" class="single-menu">个人信息</a>
+        <a href="userinfo.html" class="single-menu">通用-个人信息</a>
+        <a href="paihangbang.html" class="single-menu">通用-教研室排行榜</a>
         <a href="#userMeun" class="nav-header menu-first collapsed" data-toggle="collapse">
-            <i class="icon-user-md icon-large"></i> 账号管理</a>
+            <i class="icon-user-md icon-large"></i> zr-账号管理</a>
         <ul id="userMeun" class="nav nav-list collapse menu-second">
             <li>
-                <a href="account-jys.html">
+                <a href="zr-account-jsy.html">
                     <i class="icon-user"></i> 教研室账号管理</a>
             </li>
             <li>
-                <a href="account-xy.html">
+                <a href="zr-account-xy.html">
                     <i class="icon-edit"></i> 系院账号管理</a>
             </li>
             <li>
-                <a href="account-shr.html">
+                <a href="zr-account-shr.html">
                     <i class="icon-trash"></i> 审核人账号管理</a>
             </li>
     
         </ul>
-        <a href="distribution.html" class="single-menu">审核人分配</a>         <a href="jysck.html" class="single-menu">教研室查看</a>         <a href="score.html" class="single-menu">教研室排行榜</a>
+        <a href="zr-shrdistribution.html" class="single-menu">zr-审核人分配</a>
+        <a href="zr-jys-view.html" class="single-menu">zr-教研室查看</a>
+    
+        <!--教研室列表  -->
         <a href="#articleMenu" class="nav-header menu-first collapsed" data-toggle="collapse">
-            <i class="icon-book icon-large"></i> 一级菜单</a>
+            <i class="icon-book icon-large"></i>jys-教研室上传</a>
         <ul id="articleMenu" class="nav nav-list collapse menu-second">
             <li>
-                <a href="">
-                    <i class="icon-pencil"></i> 二级菜单</a>
+                <a href="jys-upfile.html">
+                    <i class="icon-pencil"></i> 制度建设</a>
             </li>
             <li>
                 <a href="">
-                    <i class="icon-list-alt"></i> 二级菜单</a>
+                    <i class="icon-list-alt"></i> 教学效果</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="icon-list-alt"></i> 专业建设</a>
+            </li>
+        </ul>
+        <a href="jys-shenhehistory.html" class="single-menu">jys-审核记录</a>
+    
+    
+        <!-- 审核人列表 -->
+        <a href="#shrside" class="nav-header menu-first collapsed" data-toggle="collapse">
+            <i class="icon-user-md icon-large"></i> shr-教研室审核</a>
+        <ul id="shrside" class="nav nav-list collapse menu-second">
+            <li>
+                <a href="shr-jys待我审核列表.html">
+                    <i class="icon-user"></i> 待我审核</a>
+            </li>
+            <li>
+                <a href="shr-jys审核记录.html">
+                    <i class="icon-edit"></i> 审核记录</a>
             </li>
         </ul>
     </div>
@@ -95,28 +143,28 @@
                 <a href="">账号管理</a>
             </span>
             <span>></span>
-            <span><a href="">系院账号管理</a></span>
+            <span><a href="">审核人账号管理</a></span>
         </div>
 
         <!-- 主显示区 -->
         <div class="main">
 
             <div class="table-content">
-                <span>添加或修改系院账号</span>
+                <span>添加或修改审核人账号</span>
                 <table class="table table-hover table-bordered ">
                     <thead>
                         <tr>
-                            <th>系院名称</th>
-                            <th>系院账号</th>
-                            <th>系院账号密码</th>
-                            <th>教研室数量</th>
+                            <th>审核人名称</th>
+                            <th>审核人账号</th>
+                            <th>密码(初始密码:123456)</th>
+                            <th>所属文理科</th>
                             <th>操作</th>
                         </tr>
                     </thead>
                     <tbody id="mytable">
                         <tr class="mytabletr">
                             <td>
-                                <input type="text" class="form-control" placeholder="软件学院" disabled>
+                                <input type="text" class="form-control" placeholder="张一一" disabled>
                             </td>
                             <td>
                                 <input type="text" class="form-control" placeholder="account-ruanjianxueyuan" disabled>
@@ -125,7 +173,8 @@
                                 <button class="btn btn-primary" style="width: 100%;">重置密码</button>
                             </td>
                             <td>
-                                <span>5</span>
+                            <input type="radio" name="wenOrLi" id="wen">文科
+                            <input type="radio" name="wenOrLi" id="li">理科
                             </td>
                             <td>
                                 <button class="btn btn-primary">修改</button>
@@ -135,7 +184,7 @@
                     </tbody>
                 </table>
                 <div class="mybtn">
-                    <button id="addNewAccount" class="btn btn-primary">添加新的系院</button>
+                    <button id="addNewAccount" class="btn btn-primary">添加新的审核人</button>
                     <button type="submit" class="btn btn-default">提交</button>
                 </div>
             </div>
@@ -160,8 +209,11 @@
         htmladd += '<tr class="mytabletr">';
         htmladd += '<td><input type="text" class="form-control"></td>';
         htmladd += '<td><input type="text" class="form-control"></td>';
-        htmladd += '<td> <button class="btn btn-primary" style="width: 100%;">重置密码</button></td>';
-        htmladd += '<td>0</td>';
+        htmladd += '<td><button class="btn btn-primary" style="width: 100%;">重置密码</button>';
+        htmladd += `<td>
+                            <input type="radio" name="wenOrLi" id="wen">文科
+                            <input type="radio" name="wenOrLi" id="li">理科
+                            </td>`;
         htmladd += '<td><button class="btn btn-primary">修改</button><button class="myremove btn btn-danger">删除</button></td>';
         htmladd += ' </tr>';
         $("#mytable").append(htmladd);
